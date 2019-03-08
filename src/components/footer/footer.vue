@@ -39,7 +39,8 @@ export default {
     position fixed
     width 100%
     bottom 0
-    height 50px
+    height 50px 
+    background #fafafa
     .footer_list
       display flex
       justify-content space-around

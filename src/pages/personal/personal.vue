@@ -15,7 +15,37 @@
 
     <div class="p_session">
       <div class="logo">
-        <h1></h1>
+        <h1>
+          <img src="//yanxuan.nosdn.127.net/bd139d2c42205f749cd4ab78fa3d6c60.png" alt="">
+        </h1>
+      </div>
+      <div class="btnWrap">
+        <div class="phone_login" @click="$router.push('/login')">
+          <i class="iconfont iconshouji"></i>
+          <span>手机号码登录</span>
+        </div>
+        <div class="email_login">
+          <i class="iconfont iconyouxiang"></i>
+          <span>邮箱账号登录</span>
+        </div>
+        <div class="register">
+          手机号快捷注册
+        </div>
+      </div>
+
+      <div class="bottom_wrap">
+        <div class="itemWrap">
+          <i class="iconfont iconchangyonglogo28"></i>
+          <span>微信</span>
+        </div>
+        <div class="itemWrap">
+          <i class="iconfont iconQQ"></i>
+          <span>QQ</span>
+        </div>
+        <div class="itemWrap">
+          <i class="iconfont iconweibo"></i>
+          <span>微博</span>
+        </div>
       </div>
     </div>
   </div>
@@ -23,7 +53,7 @@
 
 <script>
 export default {
-  
+
 }
 </script>
 
@@ -46,9 +76,51 @@ export default {
       h2
         font-size 20px
         font-family "楷体","楷体_GB2312"
+        font-weight bold
 
     .p_session
       width 100%
       height 100%
       background #f4f4f4
+      display flex
+      flex-direction column
+      align-items center
+      justify-content space-around
+      .logo
+        img
+          width 35vw
+          height 6vh
+      .btnWrap
+        margin-top -150px 
+        width 90%
+        .phone_login
+          wdith 100%
+          height 40px
+          border 1px solid #b4282d
+          line-height 40px
+          text-align center
+          color #fff
+          background #b4282d
+        .email_login
+          wdith 100%
+          height 40px
+          border 1px solid #b4282d
+          line-height 40px
+          text-align center
+          margin 10px 0
+        .register
+          wdith 100%
+          height 40px
+          text-align center
+
+      .bottom_wrap
+        width 100%
+        padding-left 100px
+        .itemWrap
+          float left
+          padding 0 20px
+          color #7f7f7f
+          border-right 1px solid #7f7f7f
+          &:last-child
+            border-right none
 </style>

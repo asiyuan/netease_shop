@@ -12,6 +12,7 @@ import Category from './pages/Category/Category'
 import Knowledge from './pages/Knowledge/Knowledge'
 import Personal from './pages/personal/personal'
 import ShopCart from './pages/shopCart/shopCart'
+
 export default {
   components: {
     Footer

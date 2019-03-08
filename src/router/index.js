@@ -7,6 +7,9 @@ import Knowledge from '../pages/Knowledge/Knowledge'
 import Personal from '../pages/personal/personal'
 import ShopCart from '../pages/shopCart/shopCart'
 import Search from '../pages/search/search.vue'
+import Login from '../pages/login/Login.vue'
+import Found from '../pages/found/found'
+import Selection from '../pages/Selection/Selection'
 
 Vue.use(VueRouter)
 
@@ -31,7 +34,20 @@ export default new VueRouter({
       component: Knowledge,
       meta: {
         showFooter: true
-      }
+      },
+      children: [
+        {
+          path: '/knowledge/found',
+          component: Found,
+          meta: {
+            showFooter: true
+          }
+        },
+        {
+          path: '/knowledge/selection',
+          component: Selection
+        }
+      ]
     },
     {
       path: '/shopcart',
@@ -43,13 +59,14 @@ export default new VueRouter({
     {
       path: '/personal',
       component: Personal,
-      meta: {
-        showFooter: true
-      }
     },
     {
       path: '/search',
       component: Search
+    },
+    {
+      path: '/login',
+      component: Login
     },
     {
       path: '/',

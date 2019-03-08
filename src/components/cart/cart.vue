@@ -15,10 +15,11 @@
 
 <style lang="stylus" scoped>
   .shop_cart
-    width 375px
+    width 100%
     height 340px
     background #fff
-    padding 20px 10px
+    padding 10px 10px
+    box-sizing border-box
     .title
       display flex
       align-items center
@@ -33,7 +34,7 @@
       padding-right 20px
       margin 10px 0
       line-height 26px
-      font-size 18px
+      font-size 16px
       color #333
     .s_pic
       width 345px
