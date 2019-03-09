@@ -2,12 +2,12 @@
   <div class="sm_cart">
     <div class="left">
       <div class="name">
-        <img src="https://yanxuan.nosdn.127.net/971d027c6b399fc7b269f9db25a49b80.jpg?imageView&quality=65&thumbnail=56y56" alt="">
-        <span>海外组:小嗨</span>
+        <img :src="item.avatar" alt="">
+        <span>{{item.nickname}}</span>
       </div>
       <div class="title">
-        <p>叫醒少女肌，不输大牌的平价浓缩精华水</p>
-        <span>活颜润肌水限时7.4折</span>
+        <p>{{item.title}}</p>
+        <span>{{item.subTitle}}</span>
       </div>
       <div class="see">
         <i class="iconfont iconyanjing"></i>
@@ -15,14 +15,17 @@
       </div>
     </div>
     <div class="right">
-      <img src="https://yanxuan.nosdn.127.net/229003779a75d3fb1fc35bb2a86cb91b.jpg?imageView&quality=65&thumbnail=272y272" alt="">
+      <img v-lazy="item.picUrl" alt="">
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  
+  props: {
+    item: Object
+  },
+ 
 }
 </script>
 
@@ -40,10 +43,13 @@ export default {
       width 200px
       height 136px
       .name 
+        display flex
+        align-items center
         img 
           width 28px
           height 28px
           border-radius 50%
+          margin-right 5px
       .title
         margin-top 20px
         width 200px

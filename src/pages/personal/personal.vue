@@ -1,14 +1,14 @@
 <template>
   <div class="p_wrap">
     <Header class="p_header">
-      <div class="left">
+      <div class="left" @click='$router.replace("/home")'>
         <i class="iconfont iconshouye"></i>
       </div>
       <div class="middle">
         <h2>网易严选</h2>
       </div>
       <div class="right">
-        <i class="iconfont iconsousuo6"></i>
+        <i class="iconfont iconsousuo6" @click='$router.push("/search")'></i>
         <i class="iconfont iconqicheqianlian-"></i>
       </div>
     </Header>

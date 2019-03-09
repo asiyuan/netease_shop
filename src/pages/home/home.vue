@@ -14,7 +14,7 @@
     </Header>
 
     <NavList/>
-    <Banner/>
+    <Banner />
 
     <div class="feature">
       <ul>
@@ -68,6 +68,52 @@
         </li>
       </ul>
     </div>
+
+    <div class="women_info">
+      <img src="https://yanxuan.nosdn.127.net/15519407811151838.gif?imageView&thumbnail=750x0&quality=75" alt="" class="item_1">
+      <div class="w_item">
+        <img src="https://yanxuan.nosdn.127.net/15519407902381839.jpg?imageView&thumbnail=375x0&quality=75" alt="">
+        <img src="https://yanxuan.nosdn.127.net/15520281195103024.jpg?imageView&thumbnail=375x0&quality=75" alt="">
+      </div>
+    </div>
+
+    <div class="new_people">
+      <h2>-&nbsp;&nbsp;新人专享礼&nbsp;&nbsp;-</h2>
+      <div class="left">
+        <span>新人专享礼包</span>
+        <img src="//yanxuan.nosdn.127.net/a020bed0783956f650abc016e386bead.png" alt="">
+      </div>
+      <div class="right">
+        <div class="r_top">
+          <h3>福利社</h3>
+          <span>今日特价</span>
+          <img src="http://yanxuan.nosdn.127.net/4eb8b9181ce092f798aad1050369a9de.png?imageView&thumbnail=200x200&quality=75" alt="">
+        </div>
+        <div class="r_bottom">
+          <h3>新人拼团</h3>
+          <span>1元起包邮</span>
+          <img src="http://yanxuan.nosdn.127.net/db53cb751965b843975e9e3bfcbaf227.png?imageView&thumbnail=200x200&quality=75" alt="">
+        </div>
+      </div>
+    </div>
+
+    <HomeScroll/>
+    <HomeScroll/>
+    <HomeScroll/>
+    <HomeScroll/>
+    <HomeScroll/>
+    <HomeScroll/>
+
+    <div class="footer">
+      <div class="f_mid">
+        
+          <span>下载APP</span>
+          <span>电脑版</span>
+          <p>食品经营许可证：JY13301080111719</p>
+          <p>天才樱木花道版权所有 © 2019-</p>
+        
+      </div>
+    </div>
   </div>
 </template>
 
@@ -76,11 +122,13 @@ import ajax from '@/api/ajax'
 import Header from '@/components/header/header'
 import NavList from '@/components/navList/navList'
 import Banner from '@/components/banner/banner'
+import HomeScroll from '@/components/homeScroll/homeScroll'
 export default {
   components: {
     Header,
     NavList,
-    Banner
+    Banner,
+    HomeScroll
   },
   methods: {
     handleFocus () {
@@ -94,10 +142,11 @@ export default {
 <style lang="stylus" scoped>
   .home_wrap
     width 100%
-    height 100%
     background #f4f4f4
     .head
-      position relative
+      position fixed
+      z-index 10
+      height 46px
       display flex
       align-items center
       justify-content space-around
@@ -161,5 +210,87 @@ export default {
           img 
             width 55px
             height 55px
+
+    .women_info
+      width 100%
+      height 220px
+      background #fff
+      padding 10px 5px
+      box-sizing border-box
+      .item_1
+        width 100%
+        border-radius 10px 10px 0 0
+      .w_item
+        img 
+          float left
+          width 50%
+
+    .new_people
+      width 100%
+      height 300px
+      background #fff
+      box-sizing border-box
+      padding 10px
+      h2
+        text-align center
+        font-size 16px
+        margin-bottom 20px
+      .left 
+        float left
+        width 45%
+        height 200px
+        background #F9E9CF
+        display flex
+        flex-direction column
+        align-items center
+        justify-content space-around
+        img   
+          width 120px
+          height 120px
+      .right
+        width 45%
+        float left
+        height 200px
+        margin-left 10px
+        div
+          display flex
+          align-items center
+          justify-content space-around
+          width 180px
+          height 100px
+          img
+            width 80px
+            height 80px
+        .r_top
+          background #FBE2D3
+        .r_bottom
+          background #FFECC2
+
+    .footer
+      margin-bottom 60px
+      width 100%
+      height 120px
+      background #414141
+      .f_mid
+        width 100%
+        margin 30px 60px
+        padding 20px
+        box-sizing border-box
+        
+        span 
+          color #fff
+          width 70px
+          height 20px
+          display inline-block
+          border 1px solid #999
+          text-align center
+          font-size 14px
+          line-height 20px
+          margin-left 20px
+        p 
+          margin-top 10px
+          font-size 12px
+          color #ffffff
+          line-height 15px
 </style>
 

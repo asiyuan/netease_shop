@@ -51,6 +51,9 @@ export default {
 
 <style lang="stylus" scoped>
   .nav_wrap
+    position fixed
+    top 46px
+    z-index 10
     background #fff
     overflow hidden
     .nav_list

@@ -1,7 +1,7 @@
 <template>
   <div class="k_wrap">
     <Header class="k_header">
-      <div class="left">
+      <div class="left" @click="$router.replace('/home')">
         <i class="iconfont iconshouye"></i>
       </div>
       <div class="middle">
@@ -9,7 +9,7 @@
         <router-link class="select" to="/knowledge/selection">甄选家</router-link>
       </div>
       <div class="right">
-        <i class="iconfont iconsousuo6"></i>
+        <i class="iconfont iconsousuo6" @click="$router.push('/search')"></i>
         <i class="iconfont iconqicheqianlian-"></i>
       </div>
     </Header>
@@ -30,12 +30,18 @@
 </template>
 
 <script>
+import ajax from '@/api/ajax.js'
 import BScroll from 'better-scroll'
 export default {
   mounted () {
     new BScroll('.k_nav', {
       scrollX: true
     })
+  },
+  async created () {
+    const result = await ajax('/knowledgeFound')
+    console.log(result.data)
+    this.$store.dispatch('reqKnowledgeFound')
   }
 }
 </script>

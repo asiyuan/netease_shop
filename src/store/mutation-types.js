@@ -1,0 +1,1 @@
+export const GET_KNOWLEDGE_FOUND = 'get_knowledge_found'

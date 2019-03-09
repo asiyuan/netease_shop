@@ -41,11 +41,16 @@ export default new VueRouter({
           component: Found,
           meta: {
             showFooter: true
-          }
+          },
+          
         },
         {
           path: '/knowledge/selection',
           component: Selection
+        },
+        {
+          path: '/',
+          redirect: '/knowledge/found'
         }
       ]
     },
