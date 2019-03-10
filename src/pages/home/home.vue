@@ -144,6 +144,7 @@ export default {
     width 100%
     background #f4f4f4
     .head
+      width 100%
       position fixed
       z-index 10
       height 46px

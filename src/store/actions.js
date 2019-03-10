@@ -1,7 +1,8 @@
 import ajax from '@/api/ajax'
 
 import {
-  GET_KNOWLEDGE_FOUND
+  GET_KNOWLEDGE_FOUND,
+  GET_CATEGORY_LIST
 } from './mutation-types'
 
 export default {
@@ -18,5 +19,10 @@ export default {
       })
       commit(GET_KNOWLEDGE_FOUND, arr)
     }
+  },
+
+  async reqCategoryList ({commit}) {
+    const result = await ajax('/categoryList')
+    commit(GET_CATEGORY_LIST, result.data)
   }
 }

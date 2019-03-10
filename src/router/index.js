@@ -10,6 +10,7 @@ import Search from '../pages/search/search.vue'
 import Login from '../pages/login/Login.vue'
 import Found from '../pages/found/found'
 import Selection from '../pages/Selection/Selection'
+import SubCategory from '../components/subCategory/subCategory.vue'
 
 Vue.use(VueRouter)
 
@@ -27,7 +28,17 @@ export default new VueRouter({
       component: Category,
       meta: {
         showFooter: true
-      }
+      },
+      children: [
+        {
+          path: '/category/cateList',
+          component: SubCategory,
+          meta: {
+            showFooter: true
+          }
+        },
+        
+      ]
     },
     {
       path: '/knowledge',

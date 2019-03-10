@@ -41,6 +41,7 @@ export default {
     bottom 0
     height 50px 
     background #fafafa
+    z-index 10
     .footer_list
       display flex
       justify-content space-around

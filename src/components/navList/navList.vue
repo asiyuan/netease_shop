@@ -51,7 +51,7 @@ export default {
 
 <style lang="stylus" scoped>
   .nav_wrap
-    position fixed
+    position relative
     top 46px
     z-index 10
     background #fff
