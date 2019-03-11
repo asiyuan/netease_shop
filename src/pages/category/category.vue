@@ -1,7 +1,7 @@
 <template>
   <div class="c_wrap">
     <div class="c_header">
-      <div class="search">
+      <div class="search" @click='$router.push("/search")'>
         <div class="content">
           <i class="iconfont iconsousuo6"></i>
           <span>搜索商品, 共99999款好物</span>
@@ -11,8 +11,9 @@
 
     <div class="session">
       <div class="navWrap">
-        <div class="leftNav" @click="handleClick" ref="navList">
-          <div class="item" v-for="(c, index) in categoryList" :key="index">
+        <div class="leftNav"  ref="navList">
+          <div class="item" v-for="(c, index) in categoryList" :key="index"
+           :class="c.id === parseInt($route.query.categoryId) ? 'active' : ''">
             <router-link :to="`/category/cateList?categoryId=${c.id}`"> {{c.name}}</router-link>
           </div>
         </div>
@@ -45,16 +46,6 @@ export default {
         click: true
       })
     })
-  },
-  methods: {
-    handleClick (e) {
-      const list = this.$refs.navList
-      for (let i = 0; i < list.children.length; i++) {
-        list.children[i].classList.remove('active')
-      }
-      
-      e.target.classList.add('active')
-    }
   },
   computed: {
     ...mapState(['categoryList']),

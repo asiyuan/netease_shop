@@ -16,13 +16,13 @@
     <NavList/>
     <Banner />
 
-    <div class="feature">
-      <ul>
-        <li>网易自营品牌</li>
-        <li>30天无忧退货</li>
-        <li>48小时快速退款</li>
-      </ul>
-    </div>
+      <div class="feature">
+        <ul>
+          <li>网易自营品牌</li>
+          <li>30天无忧退货</li>
+          <li>48小时快速退款</li>
+        </ul>
+      </div>
 
     <div class="h_category">
       <ul>

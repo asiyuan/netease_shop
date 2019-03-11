@@ -47,6 +47,7 @@
           <span>微博</span>
         </div>
       </div>
+
     </div>
   </div>
 </template>
@@ -80,7 +81,7 @@ export default {
 
     .p_session
       width 100%
-      height 100%
+      height 600px
       background #f4f4f4
       display flex
       flex-direction column
@@ -114,8 +115,6 @@ export default {
           text-align center
 
       .bottom_wrap
-        width 100%
-        padding-left 100px
         .itemWrap
           float left
           padding 0 20px

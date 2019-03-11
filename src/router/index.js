@@ -26,6 +26,7 @@ export default new VueRouter({
     {
       path: '/category',
       component: Category,
+      redirect: '/category/cateList',
       meta: {
         showFooter: true
       },
@@ -37,7 +38,6 @@ export default new VueRouter({
             showFooter: true
           }
         },
-        
       ]
     },
     {
@@ -75,6 +75,12 @@ export default new VueRouter({
     {
       path: '/personal',
       component: Personal,
+      children: [
+        {
+          path: '/personal/phonelogin',
+          component: Login
+        } 
+      ]
     },
     {
       path: '/search',
@@ -83,7 +89,7 @@ export default new VueRouter({
     {
       path: '/login',
       component: Login
-    },
+    }, 
     {
       path: '/',
       redirect: '/home'
