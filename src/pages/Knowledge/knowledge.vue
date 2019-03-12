@@ -15,13 +15,12 @@
     </Header>
 
     <nav class="k_nav">
-      <ul class="k_list">
-        <li class="active">推荐</li>
-        <li>女王节礼物</li>
-        <li>春茶上市</li>
-        <li>晒单</li>
-        <li>达人</li>
-        <li>HOME</li>
+      <ul class="k_list" ref="tabList" @click="handleClick">
+        <li v-for="(t, index) in tabs" :key="index" >
+          <router-link :to="`/knowledge/found/${t.tabId}`">
+            {{t.tabName}}
+          </router-link>
+        </li>
       </ul>
     </nav>
 
@@ -33,15 +32,48 @@
 import ajax from '@/api/ajax.js'
 import BScroll from 'better-scroll'
 export default {
+  data () {
+    return {
+      tabs: []
+    }
+  },
   mounted () {
-    new BScroll('.k_nav', {
-      scrollX: true
-    })
+    this._getTabs()
   },
   async created () {
     const result = await ajax('/knowledgeFound')
-    console.log(result.data)
     this.$store.dispatch('reqKnowledgeFound')
+    this.$store.dispatch('reqHomeCart')
+  },
+  methods: {
+    async _getTabs () {
+      const url = '/api/topic/v1/find/getTabs.json'
+      const result = await ajax(url)
+      if (result.code === '200') {
+        console.log(result)
+        result.data.forEach(item => this.tabs.push(item.tabName))
+        this.tabs = result.data
+      }
+    },
+    handleClick (e) {
+     /*  const el = e.target
+      const tabList = this.$refs.tabList
+      for (let i = 0; i < tabList.children.length; i++) {
+        tabList.children[i].classList.remove('active')
+      }
+      console.log(el)
+      el.classList.add('active') */
+    }
+  },
+  watch: {
+    tabs () {
+      this.$nextTick(() => {
+        new BScroll('.k_nav', {
+          scrollX: true,
+          click: true
+        })
+      })
+    }
   }
 }
 </script>
@@ -80,9 +112,11 @@ export default {
           display inline-block
           height 36px
           line-height 36px
-          margin 0 10px
+          margin 0 20px
           font-size 14px
           color #7f7f7f
           &.active
+            border-bottom  2px solid #b4282d
+          &.router-link-active
             border-bottom  2px solid #b4282d
 </style>  

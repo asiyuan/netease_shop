@@ -44,7 +44,7 @@ export default {
         width += 110
       }
       listWrap.style.width = width + 'px'
-      console.log(listWrap.style.width)
+
       new BScroll('.wrap', {
         scrollX: true
       })

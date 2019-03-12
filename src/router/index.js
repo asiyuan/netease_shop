@@ -38,6 +38,10 @@ export default new VueRouter({
             showFooter: true
           }
         },
+        {
+          path: '/category/cateList',
+          redirect: '/category/cateList?categoryId=1087004'
+        }
       ]
     },
     {
@@ -48,20 +52,28 @@ export default new VueRouter({
       },
       children: [
         {
-          path: '/knowledge/found',
+          path: '/knowledge/found/:id',
           component: Found,
           meta: {
             showFooter: true
           },
-          
+          props: (route) => (
+            {
+              tabId: route.params.id*1
+            }
+          )
         },
         {
           path: '/knowledge/selection',
           component: Selection
         },
         {
-          path: '/',
-          redirect: '/knowledge/found'
+          path: '/knowledge/found',
+          redirect: '/knowledge/found/9'
+        },
+        {
+          path: '/knowledge',
+          redirect: '/knowledge/found/9'
         }
       ]
     },
@@ -75,12 +87,6 @@ export default new VueRouter({
     {
       path: '/personal',
       component: Personal,
-      children: [
-        {
-          path: '/personal/phonelogin',
-          component: Login
-        } 
-      ]
     },
     {
       path: '/search',

@@ -14,15 +14,52 @@
     </Header>
 
     <NavList/>
-    <Banner />
-
-      <div class="feature">
+    <transition name="fade">
+      <div class="mask" v-show="isMaskShow">
+        <span>全部分类</span>
         <ul>
-          <li>网易自营品牌</li>
-          <li>30天无忧退货</li>
-          <li>48小时快速退款</li>
+          <li>
+          <a href="javascript:;">推荐</a>
+          </li>
+          <li>
+            <a href="javascript:;">居家生活</a>
+          </li>
+          <li>
+            <a href="javascript:;">服饰鞋包</a>
+          </li>
+          <li>
+            <a href="javascript:;">美食酒水</a>
+          </li>
+          <li>
+            <a href="javascript:;">个护清洁</a>
+          </li>
+          <li>
+            <a href="javascript:;">母婴亲子</a>
+          </li>
+          <li>
+            <a href="javascript:;">运动旅行</a>
+          </li>
+          <li>
+            <a href="javascript:;">数码家电</a>
+          </li>
+          <li>
+            <a href="javascript:;">礼品特色</a>
+          </li>
         </ul>
       </div>
+    </transition> 
+    <div class="toggle" @click="openMask">
+      <div class="icon" :class="{toggleActive: fade}"></div>
+    </div>
+    <Banner />
+
+    <div class="feature">
+      <ul>
+        <li>网易自营品牌</li>
+        <li>30天无忧退货</li>
+        <li>48小时快速退款</li>
+      </ul>
+    </div>
 
     <div class="h_category">
       <ul>
@@ -130,10 +167,20 @@ export default {
     Banner,
     HomeScroll
   },
+  data () {
+    return {
+      isMaskShow: false,
+      fade: false
+    }
+  },
   methods: {
     handleFocus () {
       console.log(123)
       this.$router.push('/search')
+    },
+    openMask () {
+      this.isMaskShow = !this.isMaskShow
+      this.fade = !this.fade
     }
   }
 }
@@ -177,8 +224,50 @@ export default {
         border-radius 5px
         font-size 12px
         color #b4282d
+    .mask
+      top 50px
+      width 100%
+      height 186px
+      background #fff
+      position absolute
+      transform translateY(-180deg)
+      z-index 10
+      span  
+        margin 10px 0 0 20px
+      ul
+        margin 20px 0 0 20px
+        li
+          float left
+          width 70px
+          height 30px
+          margin-bottom 20px
+          border 1px solid #ccc
+          text-align center
+          line-height 30px
+          font-size 14px
+          margin-right 8px
+          
 
-    
+    .toggle
+      position absolute
+      top 46px
+      right 0
+      width 50px
+      height 30px
+      background #fff
+      z-index 100
+      display flex
+      align-items center
+      justify-content center
+      .icon
+        width 15px
+        height 15px
+        background url(//yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/arrow-down-3-799ded53ea.png)
+        background-size 100%
+        transition transform .5s
+        &.toggleActive
+          transform rotate(180deg)
+        
     .feature
       width 100%
       height 30px

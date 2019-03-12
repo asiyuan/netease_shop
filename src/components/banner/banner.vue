@@ -51,5 +51,6 @@ export default {
 <style lang="stylus" scoped>
   .banner 
     img 
+      height 200px
       width 375px
 </style>

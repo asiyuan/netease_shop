@@ -1,7 +1,7 @@
 <template>
   <div class="search_wrap">
     <div class="search">
-      <input type="text" v-model="defaultKeywords">
+      <input type="text" v-model="inputValue" @keyup="handleKeyup" :placeholder="defaultKeywords">
       <a href="" @click="$router.back()">取消</a>
     </div>
     <p>热门搜索</p>
@@ -17,7 +17,8 @@ export default {
   data () {
     return {
       hotKeywordVOList: [],
-      defaultKeywords: []
+      defaultKeywords: [],
+      inputValue: ''
     }
   },
   methods: {
@@ -30,6 +31,14 @@ export default {
         this.hotKeywordVOList = hotKeywordVOList
         this.defaultKeywords = defaultKeywords[Math.floor(Math.random()*6)].keyword
       } 
+    },
+    async handleKeyup (e) {
+      const url = '/api/xhr/search/searchAutoComplete.json?csrf_token=f6f2e44475ebdad93e97ef25dd79e4d3'
+     /*  setTimeout(async () => {
+        const result = ajax(url, {keywordPrefix: bao}, 'POST')
+      }, 500) */
+      const result = await ajax(url, {keywordPrefix: this.inputValue}, 'POST')
+      console.log(result)
     }
   },
   async mounted () {
