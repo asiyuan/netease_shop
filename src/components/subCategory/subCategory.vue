@@ -30,14 +30,20 @@ export default {
       if (category) {
         return category.subCateList
       } else {
-        return this.categoryList[0]
+        if (this.categoryList[0]) {
+          return this.categoryList[0].subCateList
+        }
       }
     },
     categoryBanner () {
       const category = this.categoryList.find(item => item.id == this.$route.query.categoryId)
       if (category) {
         return category.bannerUrl
-      } 
+      } else {
+        if (this.categoryList[0]) {
+          return this.categoryList[0].bannerUrl
+        }
+      }
     }
   },
 }

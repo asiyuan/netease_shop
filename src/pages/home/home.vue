@@ -134,12 +134,9 @@
       </div>
     </div>
 
-    <HomeScroll/>
-    <HomeScroll/>
-    <HomeScroll/>
-    <HomeScroll/>
-    <HomeScroll/>
-    <HomeScroll/>
+    <div v-for="(item, index) in home.categoryModule" :key="index">
+      <HomeScroll :item='item' :index='index'/>
+    </div>
 
     <div class="footer">
       <div class="f_mid">
@@ -155,6 +152,7 @@
 </template>
 
 <script>
+import {mapState} from 'vuex'
 import ajax from '@/api/ajax'
 import Header from '@/components/header/header'
 import NavList from '@/components/navList/navList'
@@ -182,6 +180,12 @@ export default {
       this.isMaskShow = !this.isMaskShow
       this.fade = !this.fade
     }
+  },
+  created () {
+    this.$store.dispatch('reqHome')
+  },
+  computed: {
+    ...mapState(['home'])
   }
 }
 </script>

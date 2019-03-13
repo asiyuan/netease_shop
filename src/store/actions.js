@@ -3,7 +3,8 @@ import ajax from '@/api/ajax'
 import {
   GET_KNOWLEDGE_FOUND,
   GET_CATEGORY_LIST,
-  GET_HOME_CART
+  GET_HOME_CART,
+  GET_HOME
 } from './mutation-types'
 
 const BASE = '/api'
@@ -34,5 +35,9 @@ export default {
     if (result.code === '200') {
       commit(GET_HOME_CART, result.data)
     }
+  },
+  async reqHome ({commit}) {
+    const result = await ajax('/home')
+    commit(GET_HOME, result.data)
   }
 }

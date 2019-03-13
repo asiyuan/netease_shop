@@ -16,6 +16,9 @@ import ShopCart from './pages/shopCart/shopCart'
 export default {
   components: {
     Footer
+  },
+  created () {
+    this.$store.dispatch('reqCategoryList')
   }
 }
 </script>

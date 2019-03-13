@@ -1,5 +1,6 @@
 export default {
   knowledgeFound: [],
   categoryList: [],
-  homeCart: []
+  homeCart: [],
+  home: {}
 }

@@ -1,7 +1,8 @@
 import {
   GET_KNOWLEDGE_FOUND,
   GET_CATEGORY_LIST,
-  GET_HOME_CART
+  GET_HOME_CART,
+  GET_HOME
 } from './mutation-types'
 
 export default {
@@ -15,5 +16,8 @@ export default {
   [GET_HOME_CART] (state, data) {
     // data.result.forEach(item => state.homeCart.push(item))
     state.homeCart = [...state.homeCart, ...data.result]
+  },
+  [GET_HOME] (state, data) {
+    state.home = data
   }
 }

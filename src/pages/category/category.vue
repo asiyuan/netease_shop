@@ -37,7 +37,7 @@ export default {
     SubCategory
   },
   created () {
-    this.$store.dispatch('reqCategoryList')
+    
   },
   mounted () {
     this.$nextTick(() => {
