@@ -33,7 +33,8 @@ export default {
 
       new BScroll(".wrap" + this.index , {
         scrollX: true,
-        click: true
+        click: true,
+        touchmove: true
       })
     }
   },
