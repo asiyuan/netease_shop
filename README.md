@@ -11,7 +11,7 @@
   3. 下拉监视 pullingUp 事件，回调里发送请求，实现下拉刷新页面。
 
 
-![](https://github.com/asiyuan/netease_shop/tree/master/static/demo1.png)
+![alt](https://github.com/asiyuan/netease_shop/tree/master/static/demo1.png)
 ![](https://github.com/asiyuan/netease_shop/tree/master/static/demo2.png)
 ![](https://github.com/asiyuan/netease_shop/tree/master/static/demo3.png)
 ![](https://github.com/asiyuan/netease_shop/tree/master/static/demo4.png)
